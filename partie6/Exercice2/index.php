@@ -6,8 +6,6 @@
 
 ?>
 
-
-
 <!-- HTML -->
 
 <!DOCTYPE html>
@@ -68,9 +66,13 @@
                     <p>Faire une page index.php. Tester sur cette page que le paramètre age existe et si c'est le cas l'afficher sinon le signaler :</p>
                     <p>index.php?lastname=Nemare&firstname=Jean</p>
                     <br>
-                    <a href="index.php?lastname=Nemare&firstname=Jean">Teste des paramètres</a>
+                    <a href="index.php?lastname=Nemare&firstname=Jean"></a>
                     <?php
-                        
+                        if (isset($_GET["age"])){
+                            echo $_GET["age"];
+                        } else {
+                            echo "Renseigner votre âge.";
+                        } 
                     ?>
                 </div>
                 

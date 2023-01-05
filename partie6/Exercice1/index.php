@@ -68,7 +68,7 @@
                     <p>Faire une page index.php. Tester sur cette page que tous les paramètres de cette URL existent et les affiche :</p>
                     <p>index.php?lastname=Nemare&firstname=Jean</p>
                     <br>
-                    <a href="index.php?lastname=Nemare&firstname=Jean">Teste des paramètres</a>
+                    <a href="index.php?lastname=Nemare&firstname=Jean">Test des paramètres</a>
                     <?php
                         echo $_GET["lastname"]." ".$_GET["firstname"];
                     ?>
