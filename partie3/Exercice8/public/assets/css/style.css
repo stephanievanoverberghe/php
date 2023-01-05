@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* Custum Body */
+
+body{
+    background-color: #020014;
+    color: white;
+    
+}
+
+
+/* Custum barre de navigation */
+
+nav{
+    background-color: #020014;
+}
+
+.nav-item{
+    margin-right: 2em;
+    margin-left: 1.5em;
+}
+
+.btn-outline{
+    color: #1ff4ff;
+    border-color: #1ff4ff;
+    margin-left: 1.5em;
+}
+
+
+
+/* Bannière du site */
+
+.banniere{
+    width: 100%;
+}
+
+
+/* Custum Boutons */
+
+button{
+    background-color: #1ff4ff;
+    color: #020014;
+    font-weight: bold;
+    border-radius: 2em;
+    border: none;
+    padding: 5px 50px;
+}
+
+
+/* Partie formation */
+
+.image-platre{
+    width: 50%;
+}
+
+li{
+    list-style-type: none;
+}
+
+
+/* Partie contact */
+
+.autoportrait{
+    border-radius: 100%;
+}
+
+
+/* Partie magazine */
+
+.card{
+    color: #020014;
+}
+
+.card-btn{
+    background-color: #020014;
+    color: white;
+}
+
+.card-img-top{
+    width: auto;
+    height: 200px;
+}
+
+
+/* Custum footer */
+
+.reseaux-sociaux{
+    width: 100px;
+    height: 100px;
+}
+
+
+/* Custum Liens */
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color:#1ff4ff;
+}
+
+
+/* Custum titre et paragraphe */
+
+h1{
+    font-size: 3em;
+    font-weight: 900;
+}
+
+h2{
+    font-size: 2em;
+    font-weight: 700;
+}
+
+h3{
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+p{
+    font-size: 0.8em;
+}
