@@ -2,13 +2,7 @@
 
 <?php 
 // Exercice 6
-    $hautDeFrance = [
-        2 => 'Aisne',
-        59 => 'Nord',
-        60 => 'Oise',
-        62 => 'Pas-de-Calais',
-        80 => 'Somme',
-    ];
+    
 
 ?>
 
@@ -71,8 +65,16 @@
                 </div>
                 <div class="offset-md-3 col-md-6 text-center mb-3 mt-3">
                     <p>Exercice 6</p>
+                    <p>Faire une page index.php. Tester sur cette page que tous les paramètres de cette URL existent  et les afficher ::</p>
+                    <p>index.php?building=12&room=101</p>
+                    <br>
+                    <a href="index.php?building=12&room=101">clic ici</a>
                     <?php
-                        echo $hautDeFrance[59];
+                        if (isset($_GET["building"]) AND isset($_GET["room"])){
+                            echo $_GET["building"]."  ".$_GET["room"] ;
+                        } else {
+                            echo "";
+                        }
                     ?>
                 </div>
 

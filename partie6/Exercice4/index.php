@@ -2,20 +2,7 @@
 
 <?php 
 // Exercice 4
-    $months = [
-        'janvier', 
-        'février', 
-        'mars', 
-        'avril', 
-        'mai', 
-        'juin', 
-        'juillet', 
-        'aout', 
-        'septembre', 
-        'octobre', 
-        'novembre', 
-        'décembre'
-    ];
+    
 ?>
 
 
@@ -77,8 +64,16 @@
                 </div>
                 <div class="offset-md-3 col-md-6 text-center mb-3 mt-3">
                     <p>Exercice 4</p>
+                    <p>Faire une page index.php. Tester sur cette page que tous les paramètres de cette URL existent  et les afficher :</p>
+                    <p>index.php?language=PHP&server=LAMP</p>
+                    <br>
+                    <a href="index.php?language=PHP&server=LAMP">clic ici</a>
                     <?php
-                        echo $month = 'août';
+                        if (isset($_GET["language"]) AND isset($_GET["server"])){
+                            echo $_GET["language"]."  ".$_GET["server"] ;
+                        } else {
+                            echo "";
+                        }
                     ?>
                 </div>
                 

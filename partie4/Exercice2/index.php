@@ -2,7 +2,7 @@
 
 <?php 
 // Exercice 2
-    $bonjour = 'Hello les gens';
+    $bonjour = 'Hello les gens !';
 
     function helloWorld($bonjour) {
         return $bonjour;

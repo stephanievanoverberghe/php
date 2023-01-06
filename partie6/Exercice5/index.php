@@ -2,13 +2,7 @@
 
 <?php 
 // Exercice 5
-    $hautDeFrance = [
-        2 => 'Aisne',
-        59 => 'Nord',
-        60 => 'Oise',
-        62 => 'Pas-de-Calais',
-        80 => 'Somme',
-    ];
+
 
 ?>
 
@@ -71,8 +65,16 @@
                 </div>
                 <div class="offset-md-3 col-md-6 text-center mb-3 mt-3">
                     <p>Exercice 5</p>
+                    <p>Faire une page index.php. Tester sur cette page que tous les paramètres de cette URL existent  et les afficher :</p>
+                    <p>index.php?week=12</p>
+                    <br>
+                    <a href="index.php?week=12">clic ici</a>
                     <?php
-                        
+                        if (isset($_GET["week"])){
+                            echo $_GET["week"];
+                        } else {
+                            echo "";
+                        }
                     ?>
                 </div>
                 

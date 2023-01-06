@@ -2,20 +2,7 @@
 
 <?php 
 // Exercice 3
-    $months = [
-        'janvier', 
-        'février', 
-        'mars', 
-        'avril', 
-        'mai', 
-        'juin', 
-        'juillet', 
-        'août', 
-        'septembre', 
-        'octobre', 
-        'novembre', 
-        'décembre'
-    ];
+    
 
 ?>
 
@@ -78,8 +65,16 @@
                 </div>
                 <div class="offset-md-3 col-md-6 text-center mb-3 mt-3">
                     <p>Exercice 3</p>
+                    <p>Faire une page index.php. Tester sur cette page que tous les paramètres de cette URL existent  et les afficher:</p>
+                    <p>index.php?startDate=2/05/2016&endDate=27/11/2016</p>
+                    <br>
+                    <a href="index.php?startDate=2/05/2016&endDate=27/11/2016">clic ici</a>
                     <?php
-                        echo $months[5];
+                        if (isset($_GET["startDate"]) AND isset($_GET["endDate"])){
+                            echo $_GET["startDate"]."  ".$_GET["endDate"] ;
+                        } else {
+                            echo "";
+                        }
                     ?>
                 </div>
                 
