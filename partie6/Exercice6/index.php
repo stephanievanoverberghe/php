@@ -2,6 +2,11 @@
 
 <?php 
 // Exercice 6
+    if (empty($_GET['building']) || empty($_GET['room'])) {
+        $error = 'Il nous manque des infos';
+    } else {
+        $message = 'Il y a' . $_GET['room'] . 'chambres disponibles dans ' . $_GET['buildding'] . 'building';
+    }
     
 
 ?>
@@ -70,11 +75,14 @@
                     <br>
                     <a href="index.php?building=12&room=101">clic ici</a>
                     <?php
-                        if (isset($_GET["building"]) AND isset($_GET["room"])){
-                            echo $_GET["building"]."  ".$_GET["room"] ;
-                        } else {
-                            echo "";
-                        }
+                        // if (isset($_GET["building"]) AND isset($_GET["room"])){
+                        //     echo $_GET["building"]."  ".$_GET["room"] ;
+                        // } else {
+                        //     echo "";
+                        // }
+                        echo $error;
+                        echo $message;
+                        
                     ?>
                 </div>
 

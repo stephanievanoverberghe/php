@@ -70,7 +70,11 @@
                     <br>
                     <a href="index.php?lastname=Nemare&firstname=Jean">Test des paramètres</a>
                     <?php
-                        echo $_GET["lastname"]." ".$_GET["firstname"];
+                        if (isset($_GET["lastname"]) AND isset($_GET["firstname"])) {
+                            echo $_GET["lastname"]." ".$_GET["firstname"];
+                        }else{
+                            echo "";
+                        }
                     ?>
                 </div>
                 

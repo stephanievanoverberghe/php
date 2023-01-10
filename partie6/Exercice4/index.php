@@ -2,6 +2,17 @@
 
 <?php 
 // Exercice 4
+    if (empty($_GET['language'])) {
+        $errorLanguage = 'le paramètre language est vide';
+    } else {
+        $resultLanguage = 'Le paramètre est ok. Sa valeur est' .  $_GET['language'];
+    }
+
+    if (empty($_GET['server'])) {
+        $errorServer = 'le paramètre server est vide';
+    } else {
+        $resultServer = 'Le paramètre est ok. Sa valeur est' .  $_GET['serveur'];
+    }
     
 ?>
 
@@ -69,11 +80,10 @@
                     <br>
                     <a href="index.php?language=PHP&server=LAMP">clic ici</a>
                     <?php
-                        if (isset($_GET["language"]) AND isset($_GET["server"])){
-                            echo $_GET["language"]."  ".$_GET["server"] ;
-                        } else {
-                            echo "";
-                        }
+                        echo $errorLanguage ?? '';
+                        echo $errorServer ?? '';
+                        echo $resultLanguage ?? '';
+                        echo $resultServer ?? '';
                     ?>
                 </div>
                 

@@ -1,8 +1,8 @@
 <!-- Variables PHP-->
 
-<?php 
+<?php
 // Exercice 6
-    
+
 
 ?>
 
@@ -12,6 +12,7 @@
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +22,7 @@
 
     <title>Connexion</title>
 </head>
+
 <body>
     <header id="header">
 
@@ -65,17 +67,35 @@
                 </div>
                 <div class="offset-md-3 col-md-6 text-center mb-3 mt-3">
                     <p>Exercice 6</p>
-                    <p>Faire une page index.php. Tester sur cette page que tous les paramètres de cette URL existent  et les afficher ::</p>
-                    <p>index.php?building=12&room=101</p>
+                    <p>Avec le formulaire de l'exercice 5, Si des données sont passées en POST ou en GET, le formulaire ne doit pas être affiché. Par contre les données transmises doivent l'être. Dans le cas contraire, c'est l'inverse. </p>
+                    <p>N'utiliser qu'une seule page.</p>
                     <br>
-                    <a href="index.php?building=12&room=101">clic ici</a>
                     <?php
-                        if (isset($_GET["building"]) AND isset($_GET["room"])){
-                            echo $_GET["building"]."  ".$_GET["room"] ;
-                        } else {
-                            echo "";
-                        }
+
+                    if (isset($_POST["lastname"]) and isset($_POST["firstname"])) {
+                        echo "Bonjour " . $_POST["civilite"] . " " . $_POST["lastname"] . " " . $_POST["firstname"];
+                    } else {
                     ?>
+                        <form action="index.php" method="POST">
+                        <div class="mb-3">
+                            <select class="form-select" aria-label="civilité" name="civilite">
+                                <option value="Mme">Mme</option>
+                                <option value="Mr">Mr</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastname" class="form-label">Nom</label>
+                            <input type="text" name="lastname" class="form-control" aria-describedby="lastname" placeholder="Nom">
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstname" class="form-label">Prénom</label>
+                            <input type="text" name="firstname" class="form-control" aria-describedby="firstname" placeholder="Prénom">
+                        </div>
+
+                        <button type="submit" class="btn btn-outline">Envoyer</button>
+                    </form>
+                    <?php
+                    } ?>
                 </div>
 
                 <div class="col-12 border-bottom my-3 mt-5">
@@ -162,4 +182,5 @@
     <script src="./public/assets/js/script.js"></script>
 
 </body>
+
 </html>

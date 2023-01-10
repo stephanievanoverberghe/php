@@ -70,7 +70,7 @@
                     <br>
                     <a href="index.php?startDate=2/05/2016&endDate=27/11/2016">clic ici</a>
                     <?php
-                        if (isset($_GET["startDate"]) AND isset($_GET["endDate"])){
+                        if (isset($_GET["startDate"]) && isset($_GET["endDate"])){
                             echo $_GET["startDate"]."  ".$_GET["endDate"] ;
                         } else {
                             echo "";
