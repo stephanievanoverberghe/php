@@ -1,3 +1,8 @@
+<?php
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -15,8 +20,8 @@
     <div class="card offset-md-3 col-md-6">
         <div class=" text-center mb-3 mt-3">
             <h5>Rappel de vos informations</h5>
-            <p><b>Nom</b> : <?php echo $_POST['lastname']; ?></p>
-            <p><b>Prénom</b> : <?php echo $_POST['firstname']; ?></p>
+            <p><b class="fw-bold">Nom</b> : <?= $lastname ?></p>
+            <p><b class="fw-bold">Prénom</b> : <?= $firstname ?></p>
         </div>
     </div>
 

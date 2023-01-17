@@ -3,6 +3,10 @@
 <?php 
 // Exercice 1
     // session_start();
+    $userAgent = $_SERVER["HTTP_USER_AGENT"];
+    $nameServer = $_SERVER["SERVER_NAME"];
+    $adresseIp = $_SERVER["REMOTE_ADDR"];
+
 ?>
     
 
@@ -75,11 +79,11 @@
                     <br>
                     
                     <?php
-                        echo "Vous utilisez ".$_SERVER["HTTP_USER_AGENT"];
+                        echo 'Vous utilisez ' . $userAgent ;
                         echo "<br>";
-                        echo "Vous êtes sur ".$_SERVER["SERVER_NAME"];
+                        echo 'Votre adresse Ip est : '. $adresseIp;
                         echo "<br>";
-                        echo "Votre IP est :".$_SERVER["REMOTE_ADDR"];
+                        echo 'Vous êtes sur  '. $nameServer;
                         echo "<br>";
                     ?>
                     

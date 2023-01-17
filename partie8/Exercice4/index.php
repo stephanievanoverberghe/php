@@ -1,9 +1,10 @@
 <!-- Variables PHP-->
 
 <?php
-// Exercice 3
+// Exercice 4
+    session_start();
 
-    if (isset($_POST["user"]) AND isset($_POST["password"])){
+    if (isset($_POST["user"]) && isset($_POST["password"])){
         $user = $_POST['user'];
         $password = $_POST['password'];
 
@@ -34,6 +35,8 @@
 
         $_COOKIE['PASSWORD_USER'] = $password;
     }
+
+    
 ?>
 
 <!-- HTML -->
@@ -94,15 +97,12 @@
 
                 </div>
                 <div class="col-12 offset-md-3 col-md-6 text-center mb-3 mt-3">
-                    <p>Exercice 3</p>
-                    <p>Faire un formulaire qui permet de récupérer le login et le mot de passe de l'utilisateur. A la validation du formulaire, stocker les informations dans un cookie.</p>
+                    <p>Exercice 4</p>
+                    <p>Faire une page qui va récupérer les informations du cookie créé à l'exercice 3 et qui les affiche.</p>
                     <br>
                 </div>
 
-                Bonjour <?php echo $_COOKIE['LOGGED_USER']; ?>
-                Bonjour <?php echo $_COOKIE['PASSWORD_USER']; ?>
-
-                <form action="index.php" method="POST">
+                <form action="user.php" method="POST">
                     <div class="offset-md-3 col-md-6 mb-3">
                         <label for="user" class="form-label">Login</label>
                         <input type="text" name="user" class="form-control" aria-describedby="user" placeholder="Login" required>
@@ -111,7 +111,6 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" name="password" class="form-control" aria-describedby="password" placeholder="password">
                     </div>
-
                     <button type="submit" class="btn btn-outline">Envoyer</button>
                 </form>
 

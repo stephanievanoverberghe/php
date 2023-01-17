@@ -3,7 +3,7 @@
 <?php
 // Exercice 3
 
-    if (isset($_POST["user"]) AND isset($_POST["password"])){
+    if (isset($_POST["user"]) && isset($_POST["password"])){
         $user = $_POST['user'];
         $password = $_POST['password'];
 

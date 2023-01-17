@@ -1,10 +1,43 @@
 <!-- Variables PHP-->
 
 <?php
-// Exercice 2
+// Exercice 4
+    session_start();
 
+    if (isset($_POST["user"]) && isset($_POST["password"])){
+        $user = $_POST['user'];
+        $password = $_POST['password'];
+
+    $user = $_POST['user'];
+    $password = $_POST['password'];
+
+    setcookie(
+        'LOGGED_USER',
+        $user,
+        [
+            'expires' => time() + 60*60*24*30,
+            'secure' => true,
+            'httponly' => true,
+        ]
+        );
+
+        $_COOKIE['LOGGED_USER'] = $user;
+
+    setcookie(
+        'PASSWORD_USER',
+        $password,
+        [
+            'expires' => time() + 60*60*24*30,
+            'secure' => true,
+            'httponly' => true,
+        ]
+        );
+
+        $_COOKIE['PASSWORD_USER'] = $password;
+    }
+
+    
 ?>
-
 
 <!-- HTML -->
 
@@ -54,7 +87,7 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
+                <div class="offset-md-3 col-md-6 text-center">
                     <h2>
                         Inscription
                     </h2>
@@ -63,39 +96,23 @@
                 <div class="col-12 border-bottom my-3 mt-5">
 
                 </div>
-                <div class="offset-md-3 col-md-6 text-center mb-3 mt-3">
+                <div class="col-12 offset-md-3 col-md-6 text-center mb-3 mt-3">
                     <p>Exercice 5</p>
-                    <p>Créer un formulaire sur la page index.php avec : </p>
-                    <ul>
-                        <li>Une liste déroulante pour la civilité (Mr et Mme)</li>
-                        <li>Un champ texte pour le nom</li>
-                        <li>Un champ texte pour le prénom</li>
-                    </ul>
-                    <p>Ce formulaire doit rediriger vers la page index.php.</p>
-                    <p>Vous avez le choix de la méthode.</p>
+                    <p>Faire une page qui va pouvoir modifier le contenu du cookie de l'exercice 3.</p>
                     <br>
-                    <form action="user.php" method="POST">
-                        <div class="mb-3">
-                            <select class="form-select" aria-label="civilité" name="civilite">
-                                <option selected>Civilité</option>
-                                <option value="Mme">Mme</option>
-                                <option value="Mr">Mr</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="lastname" class="form-label">Nom</label>
-                            <input type="text" name="lastname" class="form-control" aria-describedby="lastname" placeholder="Nom">
-                        </div>
-                        <div class="mb-3">
-                            <label for="firstname" class="form-label">Prénom</label>
-                            <input type="text" name="firstname" class="form-control" aria-describedby="firstname" placeholder="Prénom">
-                        </div>
-
-                        <button type="submit" class="btn btn-outline">Envoyer</button>
-                    </form>
-
                 </div>
 
+                <form action="user.php" method="POST">
+                    <div class="offset-md-3 col-md-6 mb-3">
+                        <label for="user" class="form-label">Login</label>
+                        <input type="text" name="user" class="form-control" aria-describedby="user" placeholder="Login" required>
+                    </div>
+                    <div class="offset-md-3 col-md-6 mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" aria-describedby="password" placeholder="password">
+                    </div>
+                    <button type="submit" class="btn btn-outline">Envoyer</button>
+                </form>
 
                 <div class="col-12 border-bottom my-3 mt-5">
 

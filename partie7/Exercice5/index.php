@@ -1,7 +1,7 @@
 <!-- Variables PHP-->
 
 <?php
-// Exercice 2
+// Exercice 5
 
 ?>
 
@@ -74,10 +74,9 @@
                     <p>Ce formulaire doit rediriger vers la page index.php.</p>
                     <p>Vous avez le choix de la méthode.</p>
                     <br>
-                    <form action="user.php" method="POST">
+                    <form method="POST">
                         <div class="mb-3">
                             <select class="form-select" aria-label="civilité" name="civilite">
-                                <option selected>Civilité</option>
                                 <option value="Mme">Mme</option>
                                 <option value="Mr">Mr</option>
                             </select>
@@ -91,7 +90,7 @@
                             <input type="text" name="firstname" class="form-control" aria-describedby="firstname" placeholder="Prénom">
                         </div>
 
-                        <button type="submit" class="btn btn-outline">Envoyer</button>
+                        <input type="submit" class="mt-3 btn btn-outline" value="Envoyer"/>
                     </form>
 
                 </div>

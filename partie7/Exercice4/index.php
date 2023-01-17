@@ -1,12 +1,9 @@
 <!-- Variables PHP-->
 
 <?php 
-// Exercice 2
+// Exercice 4
 
 ?>
-    
-
-
 
 
 <!-- HTML -->
@@ -78,7 +75,7 @@
                             <input type="text" name="firstname" class="form-control" aria-describedby="firstname" placeholder="Prénom">
                         </div>
                         
-                        <button type="submit" class="btn btn-outline">Envoyer</button>
+                        <input type="submit" class="mt-3 btn btn-outline" value="Envoyer"/>
                     </form>
                     
                 </div>

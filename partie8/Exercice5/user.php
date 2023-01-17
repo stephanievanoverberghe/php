@@ -1,3 +1,40 @@
+<?php
+    session_start();
+
+    // Pour afficher le COOKIE, la page doit etre rafraichi ...
+        if (isset($_POST["user"]) && isset($_POST["password"])){
+            $user = $_POST['user'];
+            $password = $_POST['password'];
+    
+        $user = $_POST['user'];
+        $password = $_POST['password'];
+        
+        setcookie(
+            'LOGGED_USER',
+            $user,
+            [
+                'expires' => time() + 60*60*24*30,
+                'secure' => true,
+                'httponly' => true,
+            ]
+            );
+    
+            $_COOKIE['LOGGED_USER'] = $user;
+    
+        setcookie(
+            'PASSWORD_USER',
+            $password,
+            [
+                'expires' => time() + 60*60*24*30,
+                'secure' => true,
+                'httponly' => true,
+            ]
+            );
+    
+            $_COOKIE['PASSWORD_USER'] = $password;
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,13 +48,13 @@
 </head>
 
 <body>
-    <h1 class="text-center">Message bien reçu !</h1>
+<h1 class="text-center">Message bien reçu !</h1>
     <div class="card offset-md-3 col-md-6">
         <div class=" text-center mb-3 mt-3">
             <h5>Rappel de vos informations</h5>
-            <p><b>Civilité</b> : <?php echo $_POST['civilite']; ?></p>
-            <p><b>Nom</b> : <?php echo $_POST['lastname']; ?></p>
-            <p><b>Prénom</b> : <?php echo $_POST['firstname']; ?></p>
+            <p><b>Login</b> : <?php echo $user; ?></p>
+            <p><b>Mot de passe</b> : <?php echo $password; ?></p>
+            <input type="submit" class="mt-3 btn btn-secondary" value="Modifier"/>
         </div>
     </div>
 

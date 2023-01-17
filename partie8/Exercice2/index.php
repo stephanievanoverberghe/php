@@ -75,9 +75,6 @@
                     <a href="user.php">clic ici</a>
                 </div>
                 <?php
-                    echo $_SESSION['lastname'] . "<br>";
-                    echo $_SESSION['firstname'] . "<br>";
-                    echo $_SESSION['age'] . "<br><br>";
                 ?>
 
 

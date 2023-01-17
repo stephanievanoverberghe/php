@@ -1,14 +1,12 @@
-<!-- Variables PHP-->
-
 <?php
-// Exercice 6
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+$civilite = $_POST['civilite'];
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+}
 
 ?>
-
-
-
-<!-- HTML -->
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -72,30 +70,41 @@
                     <br>
                     <?php
 
-                    if (isset($_POST["lastname"]) and isset($_POST["firstname"])) {
-                        echo "Bonjour " . $_POST["civilite"] . " " . $_POST["lastname"] . " " . $_POST["firstname"];
+                    if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+                    ?>
+
+                        <form method="POST">
+                            <div class="mb-3">
+                                <select class="form-select" aria-label="civilité" name="civilite">
+                                    <option value="Mme">Mme</option>
+                                    <option value="Mr">Mr</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastname" class="form-label">Nom</label>
+                                <input type="text" name="lastname" class="form-control" aria-describedby="lastname" placeholder="Nom">
+                            </div>
+                            <div class="mb-3">
+                                <label for="firstname" class="form-label">Prénom</label>
+                                <input type="text" name="firstname" class="form-control" aria-describedby="firstname" placeholder="Prénom">
+                            </div>
+
+                            <input type="submit" class="mt-3 btn btn-outline" value="Envoyer" />
+                        </form>
+                    <?php
                     } else {
                     ?>
-                        <form action="index.php" method="POST">
-                        <div class="mb-3">
-                            <select class="form-select" aria-label="civilité" name="civilite">
-                                <option value="Mme">Mme</option>
-                                <option value="Mr">Mr</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="lastname" class="form-label">Nom</label>
-                            <input type="text" name="lastname" class="form-control" aria-describedby="lastname" placeholder="Nom">
-                        </div>
-                        <div class="mb-3">
-                            <label for="firstname" class="form-label">Prénom</label>
-                            <input type="text" name="firstname" class="form-control" aria-describedby="firstname" placeholder="Prénom">
+                        <h1 class="text-center">Message bien reçu !</h1>
+                        <div class="card offset-md-3 col-md-6">
+                            <div class=" text-center mb-3 mt-3">
+                                <h5>Rappel de vos informations</h5>
+                                <p><b class="fw-bold">Civilité</b> : <?= $civilite ?></p>
+                                <p><b class="fw-bold">Nom</b> : <?= $lastname ?></p>
+                                <p><b class="fw-bold">Prénom</b> : <?= $firstname ?></p>
+                            </div>
                         </div>
 
-                        <button type="submit" class="btn btn-outline">Envoyer</button>
-                    </form>
-                    <?php
-                    } ?>
+                    <?php } ?>
                 </div>
 
                 <div class="col-12 border-bottom my-3 mt-5">

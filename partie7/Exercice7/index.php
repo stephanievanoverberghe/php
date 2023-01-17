@@ -1,12 +1,14 @@
 <!-- Variables PHP-->
 
 <?php
-// Exercice 6
-
+// Exercice 7
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $civilite = $_POST['civilite'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+}
 
 ?>
-
-
 
 <!-- HTML -->
 
@@ -65,19 +67,16 @@
                 <div class="col-12 border-bottom my-3 mt-5">
 
                 </div>
-                <div class="offset-md-3 col-md-6 text-center mb-3 mt-3">
+                <div class="offset-md-3 col-md-6 mb-3 mt-3">
                     <p>Exercice 7</p>
                     <p>Au formulaire de l'exercice 5, ajouter un champ d'envoi de fichier. Afficher en plus de ce qui est demandé à l'exercice 6, le nom et l'extension du fichier.</p>
                     <br>
                     <?php
 
-                    if (isset($_POST["lastname"]) && isset($_POST["firstname"])) {
-                        echo 'Bonjour ' . $_POST['civilite'] . ' ' . $_POST['lastname'] . ' ' . $_POST['firstname'] . '<br>' . $_POST['upload'] . $_FILES['upload'];
-                        $verif = $_POST['upload'];
-
-                    } else {
+                    if ($_SERVER['REQUEST_METHOD'] != 'POST') {
                     ?>
-                        <form action="index.php" method="POST" enctype="multipart/form-data">
+
+                        <form method="POST">
                             <div class="mb-3">
                                 <select class="form-select" aria-label="civilité" name="civilite">
                                     <option value="Mme">Mme</option>
@@ -88,15 +87,31 @@
                                 <label for="lastname" class="form-label">Nom</label>
                                 <input type="text" name="lastname" class="form-control" aria-describedby="lastname" placeholder="Nom">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-5">
                                 <label for="firstname" class="form-label">Prénom</label>
                                 <input type="text" name="firstname" class="form-control" aria-describedby="firstname" placeholder="Prénom">
                             </div>
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="file" name="file">
+                                <label class="input-group-text" for="file">Upload</label>
+                            </div>
 
-                            <button type="submit" class="btn btn-outline">Envoyer</button>
+                            <input type="submit" class="mt-3 btn btn-outline" value="Envoyer" />
                         </form>
                     <?php
-                    } ?>
+                    } else {
+                    ?>
+                        <h1 class="text-center">Message bien reçu !</h1>
+                        <div class="card offset-md-3 col-md-6">
+                            <div class=" text-center mb-3 mt-3">
+                                <h5>Rappel de vos informations</h5>
+                                <p><b class="fw-bold">Civilité</b> : <?= $civilite ?></p>
+                                <p><b class="fw-bold">Nom</b> : <?= $lastname ?></p>
+                                <p><b class="fw-bold">Prénom</b> : <?= $firstname ?></p>
+                            </div>
+                        </div>
+
+                    <?php } ?>
                 </div>
 
                 <div class="col-12 border-bottom my-3 mt-5">
