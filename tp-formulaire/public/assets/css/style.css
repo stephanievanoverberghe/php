@@ -13,6 +13,10 @@ h1{
     border-bottom: 15px solid #D4D6B9;
 }
 
+p{
+    font-size: 0.8em;
+}
+
 .btn{
     background-color: #D4D6B9; 
     color: #32213A;
@@ -28,16 +32,21 @@ h1{
     color: #ff6b35;
 }
 
-.comments {
+.comments{
     font-style: italic;
     font-size: 18px;
     color: #ff6b35;
     height: 25px
 }
 
-.inscriptValid {
+.inscriptValid{
     text-align: center;
     margin-top: 15px;
     font-weight: bold;
     font-size: 1.5rem;
+}
+
+.form-check-input:checked{
+    background-color: #ff6b35;
+    border-color: #ff6b35;
 }
